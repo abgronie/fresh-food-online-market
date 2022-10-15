@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428885886683",
+    "project_id": "fir-getx-app-3448a",
+    "storage_bucket": "fir-getx-app-3448a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428885886683:android:b28f45926fdce2d704aefe",
+        "android_client_info": {
+          "package_name": "com.example.fresh_foods"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428885886683-8rcqgclksv9r27rvpe9ft513b5856v0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1EvVgR6vb7YR80q-4eMaqoFZjzheOPGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428885886683-8rcqgclksv9r27rvpe9ft513b5856v0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

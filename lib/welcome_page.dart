@@ -18,7 +18,7 @@ class WelcomePage extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 10),
                 width: w,
                 height: h * 0.4,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("img/44.jpg"), fit: BoxFit.cover),
                 ),
@@ -27,13 +27,13 @@ class WelcomePage extends StatelessWidget {
                     SizedBox(
                       height: h * 0.18,
                     ),
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 60,
                       backgroundImage: AssetImage("img/q.jpg"),
                     )
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
 
@@ -43,7 +43,7 @@ class WelcomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Welcome",
                       style: TextStyle(
                           fontSize: 36,
@@ -59,16 +59,16 @@ class WelcomePage extends StatelessWidget {
                     ),
                   ],
                 ),),
-            SizedBox(height:200,),
+            const SizedBox(height:200,),
             
             Container(
               width: w * 0.5,
               height: h * 0.08,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage("img/26.jpg"), fit: BoxFit.cover)),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Sign out",
                   style: TextStyle(

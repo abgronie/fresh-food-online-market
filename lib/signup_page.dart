@@ -24,7 +24,7 @@ class SignUpPage extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 10),
                 width: w,
                 height: h * 0.4,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("img/44.jpg"), fit: BoxFit.cover),
                 ),
@@ -33,7 +33,7 @@ class SignUpPage extends StatelessWidget {
                     SizedBox(
                       height: h * 0.18,
                     ),
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 60,
                       backgroundImage: AssetImage("img/q.jpg"),
                     )
@@ -49,7 +49,7 @@ class SignUpPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
@@ -60,26 +60,26 @@ class SignUpPage extends StatelessWidget {
                               BoxShadow(
                                   blurRadius: 10,
                                   spreadRadius: 7,
-                                  offset: Offset(1, 1),
+                                  offset: const Offset(1, 1),
                                   color: Colors.grey.withOpacity(0.3))
                             ]),
                         child: TextField(
                           decoration: InputDecoration(
                               hintText: "Email",
-                              prefixIcon: Icon(Icons.email,
+                              prefixIcon: const Icon(Icons.email,
                                   color: Colors.deepOrangeAccent),
                               focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                       color: Colors.white, width: 1.0)),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                       color: Colors.white, width: 1.0)),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30))),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
@@ -90,25 +90,25 @@ class SignUpPage extends StatelessWidget {
                               BoxShadow(
                                   blurRadius: 10,
                                   spreadRadius: 7,
-                                  offset: Offset(1, 1),
+                                  offset: const Offset(1, 1),
                                   color: Colors.grey.withOpacity(0.3))
                             ]),
                         child: TextField(
                           decoration: InputDecoration(
                               hintText: "Password",
-                              prefixIcon: Icon(Icons.password, color:Colors.deepOrangeAccent),
+                              prefixIcon: const Icon(Icons.password, color:Colors.deepOrangeAccent),
                               focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                       color: Colors.white, width: 1.0)),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                       color: Colors.white, width: 1.0)),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30))),
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     /*Row(children: [
@@ -124,7 +124,7 @@ class SignUpPage extends StatelessWidget {
             */
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -132,9 +132,9 @@ class SignUpPage extends StatelessWidget {
               height: h * 0.08,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage("img/26.jpg"), fit: BoxFit.cover)),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Sign up",
                   style: TextStyle(
@@ -144,7 +144,7 @@ class SignUpPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             RichText(
               text:TextSpan(
                 recognizer: TapGestureRecognizer()..onTap=()=>Get.back(),
@@ -162,7 +162,7 @@ class SignUpPage extends StatelessWidget {
                 style: TextStyle(color: Colors.grey[500], fontSize: 16),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Wrap(
               children: List<Widget>.generate(3, (index) {
                 return Padding(
@@ -172,6 +172,7 @@ class SignUpPage extends StatelessWidget {
                     backgroundColor: Colors.grey[500],
                     child: CircleAvatar(
                       radius: 25,
+                      // ignore: prefer_interpolation_to_compose_strings
                       backgroundImage: AssetImage("img/"+ images[index],),
                     )));
             }),
