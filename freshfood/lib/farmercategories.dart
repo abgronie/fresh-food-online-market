@@ -5,24 +5,24 @@ class FarmerCategories extends SliverPersistentHeaderDelegate {
   final ValueChanged<int> onChanged;
   final int selectedIndex;
 
-  FarmerCategories(this.onChanged, this.selectedIndex);
+  FarmerCategories({required this.onChanged, required this.selectedIndex});
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Categories(onChanged: onChanged, selectedIndex: selectedIndex);
+    return Container(
+        height: 52,
+        color: Colors.white,
+        child: Categories(onChanged: onChanged, selectedIndex: selectedIndex));
   }
 
   @override
-  // TODO: implement maxExtent
   double get maxExtent => 56;
 
   @override
-  // TODO: implement minExtent
   double get minExtent => 56;
 
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
-    // TODO: implement shouldRebuild
     return true;
   }
 }
@@ -41,9 +41,24 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
+  late ScrollController controller;
+
+  @override
+  void initState() {
+    controller = ScrollController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: controller,
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
