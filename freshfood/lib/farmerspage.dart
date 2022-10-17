@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:freshfood/farmerinfo.dart';
 
-import 'package:freshfood/menu.dart';
+import 'menu.dart';
 import 'farmerappbar.dart';
 
 import 'farmercategories.dart';
@@ -13,6 +14,29 @@ class Farmer extends StatefulWidget {
 }
 
 class _FarmerState extends State<Farmer> {
+  final scrollController = ScrollController();
+  int selectedCategoryIndex = 0;
+  @override
+  void initState() {
+    scrollController.addListener(() {
+      print(scrollController.offset);
+    });
+    super.initState();
+  }
+
+  void scrollToCategory(int index) {
+    if (selectedCategoryIndex != index) {
+      int totalItems = 0;
+      for (var i = 0; i < index; i++) {
+        totalItems += demoCategoryMenus[i].items.length;
+      }
+      setState(() {
+        selectedCategoryIndex = index;
+      });
+    }
+  }
+
+  // ignore: non_constant_identifier_names
   MenuCategoryItem({required String title, required List<Padding> items}) {}
 
   @override
@@ -20,12 +44,13 @@ class _FarmerState extends State<Farmer> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          FarmerAppBar(),
-          SliverToBoxAdapter(
-              child: Categories(
-            onChanged: (value) {},
-            selectedIndex: 0,
-          )),
+          const FarmerAppBar(),
+          SliverPersistentHeader(
+            delegate: FarmerCategories(
+              onChanged: scrollToCategory,
+              selectedIndex: selectedCategoryIndex,
+            ),
+          ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             sliver: SliverList(
@@ -55,6 +80,7 @@ class _FarmerState extends State<Farmer> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   MenuCard(
       {required String title, required String image, required double price}) {}
 }

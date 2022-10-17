@@ -10,11 +10,12 @@ class FarmerAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       expandedHeight: 200,
+      backgroundColor: Colors.white,
       pinned: true,
       elevation: 0,
       flexibleSpace: FlexibleSpaceBar(
         background: Image.asset(
-          "assets/images/4.png",
+          "assets/images/4.jpg",
           fit: BoxFit.cover,
         ),
       ),
